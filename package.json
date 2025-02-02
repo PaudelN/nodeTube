@@ -1,0 +1,11 @@
+{
+  "name": "nodetube",
+  "version": "1.0.0",
+  "description": "Project using node js in the backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nukesh Paudel",
+  "license": "ISC"
+}
