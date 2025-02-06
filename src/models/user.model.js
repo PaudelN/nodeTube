@@ -57,7 +57,6 @@ const userSchema = new Schema(
 //do not use arrow function in this below case as arrow function do not have "this" reference,hence outer values from userSchema cannot be accessed as it will not know the outer scoped context. So better to use function().
 //This kind of cryptographic based dependencies such as bcrypt and jwt takes some time to acheive a particular functionality, hence better to use async-await for code enhancement.
 //Hence this is a middleware,we must write next to pass the flag forward,which indicates the completing of token generation
-
 userSchema.pre("save", async function (next) {
   //isModified Prevents re-hashing an already hashed password if the user updates other fields (like email or username).
   //Password inside the isModified method should be passed as a string otherwise it will not work or throw an error.
@@ -69,13 +68,13 @@ userSchema.pre("save", async function (next) {
 //Checking if the user entered password match with the database's password
 //this function is used to check wheather the encrypted user's password and the password user is entering is same or not
 //This is done by using methods method in mongoose which allows to pass any other methods inside of it.
-
 userSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-//Generating access token for authorization
+//we generally do not use async await while generating any token cause it happens pretty quickly.
 //This both are jwt tokens created for two different purposes
+//Generating access token for authorization
 //This token is sent in headers
 userSchema.methods.generateAccessToken = function () {
   return jwt.sign(

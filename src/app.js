@@ -36,7 +36,11 @@ app.use(express.static("public")); //public is the name of the folder created be
 //use of cookieParser in backend is to allow the backend engineer to access the cookies set in the user's browser and also allow to set the new cookie for the user.
 app.use(cookieParser())
 
+//routes import
+import userRouter from './routes/user.routes.js'
 
+//routes declaration
+app.use("/api/v1/users",userRouter)
 
 
 export { app };

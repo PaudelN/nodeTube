@@ -1,0 +1,32 @@
+  HTTP METHODS
+- Basic set of operations used to interact with the server/database.
+
+GET : Retrive a resource
+PUT : Replace a resource
+PATCH : Change part/portion of a resource
+POST : Add a resource - Interact with resource
+DELETE : Remove a resource
+HEAD : No message body (Response headers only)
+OPTIONS : What operations are available
+TRACE : loopback test ( get some data)
+
+  HTTP STATUS CODE 
+1XX : Informational
+2XX : Success
+3XX : Redirectional
+4XX : Client Error
+5XX : Server Error
+
+100 : Continue
+102 : Processing
+200 : OK
+201 : Created
+202 : Accepted
+307 : Temporary Redirect
+308 : Permanent Redirect
+400 : Bad Request
+401 : Unauthorized
+402 : Payment Required
+404 : Not Found
+500 : Internal Server Error
+504 : Gateway Time Out
