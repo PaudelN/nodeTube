@@ -31,7 +31,7 @@ app.use(
 );
 
 //to store the allowed files and folders from any type of data in public asset
-app.use(express.static("public")); //public is the name of the folder created before, which means i wanna keep files or folders in this folder
+app.use(express.static("public")); //public is the name of the folder created before, which means i wanna keep files or folders in this folder named "public"
 
 //use of cookieParser in backend is to allow the backend engineer to access the cookies set in the user's browser and also allow to set the new cookie for the user.
 app.use(cookieParser())

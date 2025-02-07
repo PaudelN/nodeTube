@@ -5,18 +5,18 @@ import connectDB from "./db/index.js";
 import { app } from "./app.js";
 
 dotenv.config({
-  path: "./env",
+  path: "./.env",
 });
 
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8001, () =>
-      console.log(`\ SERVER IS RUNNING AT PORT ${process.env.PORT}`)
+      console.log(`\ ⚙️  SERVER IS RUNNING AT PORT ${process.env.PORT}`)
     );
   })
   .catch((err) => {
-    console.log("MongoDB Connection FAILED !!", err);
-  });
+    console.log(`\ 🛢 MongoDB Connection FAILED !!`, err);
+  })
 
 /*-------------------------------------------------------------------------------------------------------
 Second approach for connecting database is directly in the index.js file(Less preferable)
