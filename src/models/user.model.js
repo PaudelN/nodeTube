@@ -61,7 +61,7 @@ userSchema.pre("save", async function (next) {
   //isModified Prevents re-hashing an already hashed password if the user updates other fields (like email or username).
   //Password inside the isModified method should be passed as a string otherwise it will not work or throw an error.
   if (!this.isModified("password")) return next();
-  this.password = bcrypt.hash(this.password, 10);
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 
@@ -104,4 +104,6 @@ userSchema.methods.generateRefreshToken = function () {
     }
   );
 };
+
+
 export const User = mongoose.model("User", userSchema);
